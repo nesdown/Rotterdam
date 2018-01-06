@@ -17,6 +17,8 @@ const rl = readline.createInterface({
 rl.question('Enter the sentence to crypt: ', (answer) => {
   console.log(`This will be crypted: ${answer}`);
   sentence = String(answer);
+  sentence = sentence.toLowerCase();
+  sentence = sentence.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,'');
   cipher(sentence);
   rl.close();
 });
